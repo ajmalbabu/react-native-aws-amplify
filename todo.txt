@@ -1,0 +1,74 @@
+Building Serverless Web Applications with React & AWS Amplify
+Scalable Offline-Ready GraphQL Applications with AWS AppSync & React
+Develop a Serverless Backend using Node.js on AWS Lambda
+Build a React Native Application for iOS and Android from Start to Finish
+https://github.com/amaurymartiny/shoot-i-smoke
+https://github.com/ReactNativeNews/React-Native-Apps
+https://aws-amplify.github.io/
+
+
+Configure and install aws amplify cli
+-------------------------------------
+
+
+Configure amplify cli with a new react application
+-----------------------------------------------
+
+Create a new react application
+npx create-react-app my-amplify-app
+cd my-amplify-app
+amplify init
+next thing is to include aws-amplify and aws-amplify-react client libraries into project
+yarn add aws-amplify aws-amplify-react
+
+implement auto react user auth service with amplify
+---------------------------------------------------
+
+amplify add auth
+choose username authentication
+amplify push
+
+make changes to index.js and app.js
+npm start 
+create new user
+ajmal/ampa123/ajmalbabu122@gmail.com -> confirm user code in email and sign-in
+
+create logout: pass parameter in app.js
+
+to view authenicator resource name enter:  'amplify status' on command line
+
+| Category | Resource name        | Operation | Provider plugin   |
+| -------- | -------------------- | --------- | ----------------- |
+| Auth     | myamplifyappdc6292b0 | No Change | awscloudformation |
+
+
+implement manual react user auth service with amplify
+-----------------------------------------------------
+
+previous step is commented and current step is not commented
+
+Note: To view the users go to aws services and type 'cognito' and look for users
+
+create and interact with app sync graphQL api with amplify
+-----------------------------------------------------------
+
+amplify add api -- and choose GraphQL and series of options
+edit schema available in C:\software\workspace\my-amplify-app\amplify\backend\api\AmplifyTodoApp\schema.graphql
+amplify push is chosen
+
+"amplify push" will build all your local backend resources and provision it in the cloud
+"amplify publish" will build all your local backend and frontend resources (if you have hosting category added) and provision it in the cloud
+
+
+Create and interact with serverless REST api in lambda from react using amplify
+-------------------------------------------------------------------------------
+
+amplify add api
+edit file in C:\software\workspace\my-amplify-app\amplify\backend/function/peoplefunction/src/index.js
+
+Store data in S3 with react
+---------------------------
+
+amplify add storage
+
+
